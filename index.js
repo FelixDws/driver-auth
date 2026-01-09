@@ -37,6 +37,15 @@ function verifyToken(req, res, next) {
   }
 }
 
+
+const cors = require("cors");
+app.use(cors({
+  origin: "*",
+  methods: ["GET","POST","PUT","DELETE"],
+  allowedHeaders: ["Content-Type","Authorization"]
+}));
+
+
 // =================== ROUTE REGISTER ===================
 app.post("/register", async (req, res) => {
   try {
